@@ -17,7 +17,7 @@ def arduino():
 
 
 def run():
-  app.run(host='0.0.0.0', port=80)
+  app.run(host='0.0.0.0', port=8080)
 
 
 def keep_alive():

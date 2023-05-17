@@ -75,7 +75,6 @@ async def get_weather(message: types.Message):
 if __name__ == '__main__':
     # using method executor from aiogram.utils asking
     # Dispatcher expect command /start
+    keep_alive()
     executor.start_polling(dispatcher)
-
-keep_alive()
-bot.polling(non_stop=True, interval=0)
+  
