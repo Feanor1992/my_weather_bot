@@ -7,7 +7,8 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 from background import keep_alive
 
-bot = Bot(token='6113855922:AAGSuKb-pdwUNAhj-h8hfMjWaAgxvv0n-Rs')
+my_secret = os.environ['Telegram_key']
+bot = Bot(token=my_secret)
 dispatcher = Dispatcher(bot)
 
 
@@ -25,6 +26,7 @@ async def get_weather(message: types.Message):
         city_name = message.text
         response = requests.get(
             f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&land=en&units=metric&appid=7aebca778cfc8d1c00c3cadbb7166870')
+
         data = response.json()
         city = data['name']
         current_temperature = data['main']['temp']
